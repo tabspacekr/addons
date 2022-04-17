@@ -1,6 +1,7 @@
-# Korean Community Add-ons for Hassio
+# TabSpace HA Add-on Repository
  
- 애드온 스토어에서 Repository URL을 `https://github.com/HAKorea/addons` 으로 입력하고 애드온을 추가하세요.
+ 애드온 스토어에서 Repository URL을 `https://github.com/tabspacekr/addons` 로 입력하고 애드온을 추가합니다.
+ 본 Repository는 HA Korean Communitory Github를 유지관리목적을 위한 fork 후 운영하고 있습니다.
 
 
 
