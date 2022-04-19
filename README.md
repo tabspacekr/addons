@@ -39,8 +39,3 @@ MQTT discovery를 이용, 장치별로 yaml 파일을 직접 작성하지 않아
 ### Webdav addon for file storage in HA supervisor
 
 Webdav를 HA에서 생성하여 /share/webdav 폴더로 사용하는 애드온입니다. 파일 저장소가 HA에 통합되어 백업을 HA와 같이 사용할 수 있습니다. nginx reverse proxy 설정이 필요합니다. 
-
-### 문의
-네이버카페 : https://cafe.naver.com/koreassistant
-
-
