@@ -3,16 +3,16 @@
 ![Supports aarch64 Architecture][aarch64-shield] ![Supports amd64 Architecture][amd64-shield] ![Supports armhf Architecture][armhf-shield] ![Supports armv7 Architecture][armv7-shield] ![Supports i386 Architecture][i386-shield]
 
 ## About
-그레고리 하우스님이 만든 nodejs 월패드 프로그램을 애드온으로 만든 것입니다.
+네이버 HomeAssistant Korea 카페 <그레고리 하우스>님이 만든 nodejs 월패드 프로그램을 애드온으로 만든 것입니다.
 코맥스, 삼성, 대림 아파트 월패드를 동작시킬 수 있는 nodejs 서버입니다. 
 커스텀파일 설정이 가능해서 본인이 사용하는 nodejs 파일이 있다면 교체해서 쓰시면 됩니다.
-[네이버 Homeassistant 카페](https://cafe.naver.com/koreassistant)
+Debian11 Bullseye기반의 Raspberry Pi OS 환경에서, HA Supervisor에서 동작가능하도록 탭스페이스에서 Fork하여 수정한 버전입니다.
 
 ## Version : 0.8.7
 
 ## Installation
 
-1. 홈어시스턴트의 Hass.io > ADD-ON STORE에서 Add new repository by URL에 https://github.com/HAKorea/addons 를 입력한 다음 ADD 버튼을 누릅니다.
+1. 홈어시스턴트의 Hass.io > ADD-ON STORE에서 Add new repository by URL에 https://github.com/tabspacekr/addons 를 입력한 다음 ADD 버튼을 누릅니다.
 2. ADD-ON STORE 페이지 하단에서 "Universal Wallpad Controller with RS485" 클릭합니다.
 3. "INSTALL" 버튼을 누르면 애드온이 설치됩니다. 최대 약 10분 정도 소요. 
 4. INSTALL 버튼위에 설치 애니메이션이 동작하는데 이것이 멈추더라도 REBUILD, START 버튼이 나타나지 않는 경우가 있습니다.
@@ -22,8 +22,6 @@
 8. "START" 버튼으로 애드온을 실행합니다.
 
 애드온을 최초 실행하면 share/모델명_wallpad.js 파일이 생성됩니다. 모델명_wallpad.js 파일은 본인의 월패드에 맞게 수정하셔도 됩니다. 수정한 후 애드온을 재실행하면 수정한 js 파일로 실행됩니다. 
-
-
 
 ## Configuration
 
@@ -49,7 +47,6 @@ mqtt:
 
 ### Option: `model` (필수)
 월패드 모델명을 입력합니다. 가능한 모델명은 commax , samsung , daelim , hyundai 입니다.
-다른 월패드의 nodejs 파일을 갖고 계신분은 [이곳 이슈][issue]로 올려주시면 반영하겠습니다.
 
 ### Option: `type` (필수)
 통신 방법: serial 또는 socket 
@@ -78,7 +75,7 @@ serial을 사용하는 경우 위 값은 무시합니다.
 
 ### Option `MQTT` (필수)
 ```yaml
-  server: 192.168.x.xx  // MQTT 서버
+  server: 192.168.88.xx  // MQTT 서버
   username: id          // MQTT ID
   password: pw          // MQTT PW
   receivedelay: 10000	// 전송후 메시지 수신 지연 시간 1/1000초 단위
@@ -131,24 +128,3 @@ const CONST = {
 //------------ 적용 예시 ------------
 }
 ```
-
-## Support
-
-궁금한 점이 있으신가요??
-
-아래에 문의 하시면 답변을 구하실 수 있습니다.:
-
-- The [Home Assistant Korean Community][github].
-- The [Home Assistant 네이버카페][forum].
-
-버그신고는 카페나 깃허브로 해주세요 [open an issue on our GitHub][issue].
-
-[forum]: https://cafe.naver.com/koreassistant
-[github]: https://github.com/HAKorea/addons
-[issue]: https://github.com/zooil/wallpad/issues
-[aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
-[amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg
-[armhf-shield]: https://img.shields.io/badge/armhf-yes-green.svg
-[armv7-shield]: https://img.shields.io/badge/armv7-yes-green.svg
-[i386-shield]: https://img.shields.io/badge/i386-yes-green.svg
-
